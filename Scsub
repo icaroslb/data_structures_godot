@@ -1,0 +1,12 @@
+# SCsub
+
+Import('env')
+
+env_tts = env.Clone()
+
+env_tts.Append(CPPPATH=["data_structures/structures/rb_tree"])
+env_tts.Append(CPPPATH=["Set"])
+
+env_tts.add_source_files(env_tts.modules_sources, "Set/*.cpp")
+env_tts.add_source_files(env_tts.modules_sources, "data_structures/structures/rb_tree/*.cpp")
+env_tts.add_source_files(env_tts.modules_sources, "*.cpp")
