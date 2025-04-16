@@ -4,8 +4,6 @@
 #include <rb_tree/rb_tree.h>
 #include "SetIterator.h"
 
-class Object;
-
 class Set : public RefCounted {
     GDCLASS(Set, RefCounted);
 
