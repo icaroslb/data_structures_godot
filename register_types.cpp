@@ -11,6 +11,7 @@ void initialize_data_structures_godot_module(ModuleInitializationLevel p_level) 
 
 	ClassDB::register_class<Set>();
 	ClassDB::register_class<SetIterator>();	
+	ClassDB::register_class<SetOperations>();	
 }
 
 void uninitialize_data_structures_godot_module(ModuleInitializationLevel p_level) {

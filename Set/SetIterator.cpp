@@ -14,6 +14,36 @@ Variant SetIterator::next() {
     return *(_iterator++);
 }
 
+SetIterator& SetIterator::operator++() {
+    ++_iterator;
+    return *this;
+}
+
+SetIterator& SetIterator::operator--() {
+    ++_iterator;
+    return *this;
+}
+
+SetIterator SetIterator::operator++(int) {
+    SetIterator old_iterator = *this;
+    _iterator++;
+    return old_iterator;
+}
+
+SetIterator SetIterator::operator--(int) {
+    SetIterator old_iterator = *this;
+    _iterator--;
+    return old_iterator;
+}
+
+const Variant& SetIterator::operator*() {
+    return *_iterator;
+}
+
+const Variant* SetIterator::operator->() {
+    return _iterator.operator->();
+}
+
 bool SetIterator::operator==(const SetIterator& iterator) {
     return _iterator == iterator._iterator;
 }

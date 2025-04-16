@@ -15,18 +15,23 @@ class Set : public RefCounted {
     Callable _comp;
 public:
     Set();
-    Set(bool (*comp)(const Variant&, const Variant&));
+    Set(const Callable &comp);
     Set(const Set& set);
 
     void init(const Callable &comp);
 
     bool insert(const Variant &key);
     bool remove(const Variant &key);
-    Ref<RefCounted> search(const Variant &key);
-    Ref<RefCounted> begin();
-    Ref<RefCounted> end();
-    Ref<RefCounted> nil();
+    Ref<SetIterator> search(const Variant &key);
+    Ref<SetIterator> begin();
+    Ref<SetIterator> end();
+    Ref<SetIterator> nil();
     size_t get_size();
+
+    SetIterator _search(const Variant &key);
+    SetIterator _begin();
+    SetIterator _end();
+    SetIterator _nil();
 };
 
 #endif // SET_H

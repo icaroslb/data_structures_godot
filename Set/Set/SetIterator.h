@@ -4,7 +4,6 @@
 #include <rb_tree/rb_tree.h>
 
 #include "core/object/ref_counted.h"
-#include "core/object/object.h"
 
 class Variant;
 
@@ -23,6 +22,14 @@ public:
 
     bool is_nil();
     Variant next();
+
+    SetIterator& operator++();
+    SetIterator& operator--();
+    SetIterator operator++(int);
+    SetIterator operator--(int);
+
+    const Variant& operator*();
+    const Variant* operator->();
 
     bool operator==(const SetIterator& iterator);
     bool operator!=(const SetIterator& iterator);
