@@ -5,6 +5,7 @@
 #include "SetGodot/SetOperations.h"
 #include "StackGodot/Stack.h"
 #include "QueueGodot/Queue.h"
+#include "LinkedListGodot/LinkedList.h"
 
 void initialize_data_structures_godot_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
@@ -16,6 +17,8 @@ void initialize_data_structures_godot_module(ModuleInitializationLevel p_level) 
 	ClassDB::register_class<SetOperations>();
 	ClassDB::register_class<Stack>();
 	ClassDB::register_class<Queue>();
+	ClassDB::register_class<LinkedList>();
+	ClassDB::register_class<LinkedListIterator>();
 }
 
 void uninitialize_data_structures_godot_module(ModuleInitializationLevel p_level) {

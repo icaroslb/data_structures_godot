@@ -10,29 +10,48 @@ bool SetIterator::is_nil() {
     return _iterator.is_nil();
 }
 
-Variant SetIterator::next() {
-    return *(_iterator++);
-}
-
-SetIterator& SetIterator::operator++() {
+Ref<SetIterator> SetIterator::next() {
     ++_iterator;
-    return *this;
+    return Ref<SetIterator>(this);
 }
 
-SetIterator& SetIterator::operator--() {
+
+Ref<SetIterator> SetIterator::prev() {
+    --_iterator;
+    return Ref<SetIterator>(this);
+}
+
+Variant SetIterator::get_value() {
+    return *_iterator;
+}
+
+Ref<SetIterator> SetIterator::operator++() {
     ++_iterator;
-    return *this;
+
+    return Ref<SetIterator>(this);
 }
 
-SetIterator SetIterator::operator++(int) {
-    SetIterator old_iterator = *this;
+Ref<SetIterator> SetIterator::operator--() {
+    --_iterator;
+    
+    return Ref<SetIterator>(this);
+}
+
+Ref<SetIterator> SetIterator::operator++(int) {
+    Ref<SetIterator> old_iterator;
+    old_iterator.instantiate(*this);
+
     _iterator++;
+
     return old_iterator;
 }
 
-SetIterator SetIterator::operator--(int) {
-    SetIterator old_iterator = *this;
+Ref<SetIterator> SetIterator::operator--(int) {
+    Ref<SetIterator> old_iterator;
+    old_iterator.instantiate(*this);
+
     _iterator--;
+
     return old_iterator;
 }
 
@@ -54,5 +73,7 @@ bool SetIterator::operator!=(const SetIterator& iterator) {
 
 void SetIterator::_bind_methods() {
     ClassDB::bind_method(D_METHOD("is_nil"), static_cast<bool (SetIterator::*)()>(&SetIterator::is_nil));
-    ClassDB::bind_method(D_METHOD("next"), static_cast<Variant (SetIterator::*)()>(&SetIterator::next));
+    ClassDB::bind_method(D_METHOD("next"), static_cast<Ref<SetIterator> (SetIterator::*)()>(&SetIterator::next));
+    ClassDB::bind_method(D_METHOD("prev"), static_cast<Ref<SetIterator> (SetIterator::*)()>(&SetIterator::prev));
+    ClassDB::bind_method(D_METHOD("value"), static_cast<Variant (SetIterator::*)()>(&SetIterator::get_value));
 }

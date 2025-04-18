@@ -22,6 +22,7 @@ public:
     Variant tail() const;
 
     size_t get_size() const;
+    size_t get_size(int teste) const;
 
     bool is_empty() const;
 };

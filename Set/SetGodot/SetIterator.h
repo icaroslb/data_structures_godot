@@ -1,12 +1,9 @@
-#ifndef SET_ITERATOR_H
-#define SET_ITERATOR_H
+#ifndef SET_ITERATOR_GODOT_H
+#define SET_ITERATOR_GODOT_H
 
 #include <rb_tree/rb_tree.h>
 
 #include "core/object/ref_counted.h"
-
-class Variant;
-
 
 class SetIterator : public RefCounted {
     GDCLASS(SetIterator, RefCounted);
@@ -21,12 +18,14 @@ public:
     SetIterator(const SetIterator& iterator);
 
     bool is_nil();
-    Variant next();
+    Ref<SetIterator> next();
+    Ref<SetIterator> prev();
+    Variant get_value();
 
-    SetIterator& operator++();
-    SetIterator& operator--();
-    SetIterator operator++(int);
-    SetIterator operator--(int);
+    Ref<SetIterator> operator++();
+    Ref<SetIterator> operator--();
+    Ref<SetIterator> operator++(int);
+    Ref<SetIterator> operator--(int);
 
     const Variant& operator*();
     const Variant* operator->();

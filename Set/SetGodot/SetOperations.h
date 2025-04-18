@@ -1,5 +1,5 @@
-#ifndef SET_OPERATIONS_H
-#define SET_OPERATIONS_H
+#ifndef SET_OPERATIONS_GODOT_H
+#define SET_OPERATIONS_GODOT_H
 
 #include "Set.h"
 

@@ -60,6 +60,14 @@ size_t Set::get_size() {
     return _tree.get_size();
 }
 
+size_t Set::get_size_2(float test) {
+    return _tree.get_size();
+}
+
+size_t Set::get_size(int test) {
+    return _tree.get_size();
+}
+
 SetIterator Set::_search(const Variant &key) {
     return _tree.search(key);
 }

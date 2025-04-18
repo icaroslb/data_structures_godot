@@ -1,5 +1,5 @@
-#ifndef SET_H
-#define SET_H
+#ifndef SET_GODOT_H
+#define SET_GODOT_H
 
 #include <rb_tree/rb_tree.h>
 #include "SetIterator.h"
@@ -25,6 +25,8 @@ public:
     Ref<SetIterator> end();
     Ref<SetIterator> nil();
     size_t get_size();
+    size_t get_size_2(float test);
+    size_t get_size(int test);
 
     SetIterator _search(const Variant &key);
     SetIterator _begin();
