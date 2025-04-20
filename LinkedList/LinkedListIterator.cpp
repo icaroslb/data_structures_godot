@@ -18,6 +18,30 @@ Ref<LinkedListIterator> LinkedListIterator::prev() {
     return Ref<LinkedListIterator>(this);
 }
 
+Ref<LinkedListIterator> LinkedListIterator::operator++() {
+    ++_iterator;
+    return Ref<LinkedListIterator>(this);
+}
+
+Ref<LinkedListIterator> LinkedListIterator::operator--() {
+    --_iterator;
+    return Ref<LinkedListIterator>(this);
+}
+
+Ref<LinkedListIterator> LinkedListIterator::operator++(int) {
+    Ref<LinkedListIterator> old_iterator;
+    old_iterator.instantiate(*this);
+    ++_iterator;
+    return old_iterator;
+}
+
+Ref<LinkedListIterator> LinkedListIterator::operator--(int) {
+    Ref<LinkedListIterator> old_iterator;
+    old_iterator.instantiate(*this);
+    --_iterator;
+    return old_iterator;
+}
+
 bool LinkedListIterator::is_null() {
     return _iterator.is_null();
 }

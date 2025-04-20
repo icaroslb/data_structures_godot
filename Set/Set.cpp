@@ -56,6 +56,24 @@ Ref<SetIterator> Set::nil() {
     return iterator;
 }
 
+Ref<SetrIterator> Set::rbegin() {
+    Ref<SetrIterator> iterator;
+    iterator.instantiate(_tree.rbegin());
+    return iterator;
+}
+
+Ref<SetrIterator> Set::rend() {
+    Ref<SetrIterator> iterator;
+    iterator.instantiate(_tree.rend());
+    return iterator;
+}
+
+Ref<SetrIterator> Set::rnil() {
+    Ref<SetrIterator> iterator;
+    iterator.instantiate(_tree.rnil());
+    return iterator;
+}
+
 size_t Set::get_size() {
     return _tree.get_size();
 }
@@ -92,10 +110,12 @@ void Set::_bind_methods() {
     ClassDB::bind_method(D_METHOD("search", "key"), static_cast<Ref<SetIterator> (Set::*)(const Variant&)>(&Set::search));
 
     ClassDB::bind_method(D_METHOD("begin"), static_cast<Ref<SetIterator> (Set::*)()>(&Set::begin));
-
     ClassDB::bind_method(D_METHOD("end"), static_cast<Ref<SetIterator> (Set::*)()>(&Set::end));
-
     ClassDB::bind_method(D_METHOD("nil"), static_cast<Ref<SetIterator> (Set::*)()>(&Set::nil));
+
+    ClassDB::bind_method(D_METHOD("rbegin"), static_cast<Ref<SetrIterator> (Set::*)()>(&Set::rbegin));
+    ClassDB::bind_method(D_METHOD("rend"), static_cast<Ref<SetrIterator> (Set::*)()>(&Set::rend));
+    ClassDB::bind_method(D_METHOD("rnil"), static_cast<Ref<SetrIterator> (Set::*)()>(&Set::rnil));
 
     ClassDB::bind_method(D_METHOD("get_size"), static_cast<size_t (Set::*)()>(&Set::get_size));
 }

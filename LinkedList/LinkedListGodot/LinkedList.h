@@ -2,6 +2,7 @@
 #define LINKED_LIST_GODOT
 
 #include "LinkedListIterator.h"
+#include "LinkedListrIterator.h"
 
 class LinkedList : public RefCounted {
     GDCLASS(LinkedList, RefCounted);
@@ -15,6 +16,9 @@ public:
 
     Ref<LinkedListIterator> begin() const;
     Ref<LinkedListIterator> end() const;
+
+    Ref<LinkedListrIterator> rbegin() const;
+    Ref<LinkedListrIterator> rend() const;
 
     Ref<LinkedListIterator> insert_value(const Variant &new_value);
     Ref<LinkedListIterator> insert_in_position(const size_t &pos, const Variant &new_value);

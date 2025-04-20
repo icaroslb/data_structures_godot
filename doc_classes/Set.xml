@@ -12,21 +12,21 @@
 		<method name="begin">
 			<return type="SetIterator" />
 			<description>
-                Returns an [SetIterator] to smaller key
+				Returns an [SetIterator] to smaller key
 				[b]Complexity:[/b] [i]O(logN)[/i]
 			</description>
 		</method>
 		<method name="end">
 			<return type="SetIterator" />
 			<description>
-                Returns an [SetIterator] to [code]nil[/code]
+				Returns an [SetIterator] to bigger key
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
 		<method name="get_size">
 			<return type="int" />
 			<description>
-                Returns the actual number of keys
+				Returns the actual number of keys
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
@@ -34,7 +34,7 @@
 			<return type="void" />
 			<param index="0" name="comparison_func" type="Callable" />
 			<description>
-                Initializes a new comparision function
+				Initializes a new comparision function [param comparison_func].
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
@@ -42,7 +42,7 @@
 			<return type="bool" />
 			<param index="0" name="key" type="Variant" />
 			<description>
-				Insert a new key. If the is new, returns [code]true[/code], else, if the key is already in Set, it returns [code]false[/code]
+				Insert the new [param key]. If it is new, returns [code]true[/code], else, if it is already in Set, it returns [code]false[/code]
 				[b]Complexity:[/b] [i]O(logN)[/i]
 			</description>
 		</method>
@@ -53,19 +53,40 @@
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
+		<method name="rbegin">
+			<return type="SetrIterator" />
+			<description>
+				Returns an [SetrIterator] to bigger key
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
 		<method name="remove">
 			<return type="bool" />
 			<param index="0" name="key" type="Variant" />
 			<description>
-				Removes a key. If the kew was in Set, returns [code]true[/code], else it returns [code]false[/code]
+				Removes the [param key]. If it was in Set, returns [code]true[/code], else returns [code]false[/code]
 				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+		<method name="rend">
+			<return type="SetrIterator" />
+			<description>
+				Returns an [SetrIterator] to smaller key
+				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+		<method name="rnil">
+			<return type="SetrIterator" />
+			<description>
+				Returns an [SetrIterator] to [code]nil[/code]
+				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
 		<method name="search">
 			<return type="SetIterator" />
 			<param index="0" name="key" type="Variant" />
 			<description>
-				Returns an [SetIterator] to the key. If the key is not int Set, it returns an [SetIterator] to [code]nil[/code]
+				Returns an [SetIterator] to the [param key]. If it is not int Set, returns an [SetIterator] to [code]nil[/code]
 				[b]Complexity:[/b] [i]O(logN)[/i]
 			</description>
 		</method>

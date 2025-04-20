@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="SetOperations" inherits="Object" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Set Operation methods.
+	</brief_description>
+	<description>
+		Set Operations methods. They Receives the two sets, and the less than comparison function.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="diference_op" qualifiers="static">
+			<return type="Set" />
+			<param index="0" name="set_0" type="Set" />
+			<param index="1" name="set_1" type="Set" />
+			<param index="2" name="comp" type="Callable" />
+			<description>
+				Operates the [param set_0] - [param set_1] and returns the result [Set] organized with less than function [param comp].
+			</description>
+		</method>
+		<method name="intersection_op" qualifiers="static">
+			<return type="Set" />
+			<param index="0" name="set_0" type="Set" />
+			<param index="1" name="set_1" type="Set" />
+			<param index="2" name="comp" type="Callable" />
+			<description>
+				Operates the [param set_0] ∩ [param set_1] and returns the result [Set] organized with less than function [param comp].
+			</description>
+		</method>
+		<method name="union_op" qualifiers="static">
+			<return type="Set" />
+			<param index="0" name="set_0" type="Set" />
+			<param index="1" name="set_1" type="Set" />
+			<param index="2" name="comp" type="Callable" />
+			<description>
+				Operates the [param set_0] U [param set_1] and returns the result [Set] organized with less than function [param comp].
+			</description>
+		</method>
+		<method name="xor_op" qualifiers="static">
+			<return type="Set" />
+			<param index="0" name="set_0" type="Set" />
+			<param index="1" name="set_1" type="Set" />
+			<param index="2" name="comp" type="Callable" />
+			<description>
+				Operates the [param set_0] ⊕ [param set_1] and returns the result [Set] organized with less than function [param comp].
+			</description>
+		</method>
+	</methods>
+</class>

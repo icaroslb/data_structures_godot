@@ -19,6 +19,20 @@ Ref<LinkedListIterator> LinkedList::end() const {
     return iterator;
 }
 
+Ref<LinkedListrIterator> LinkedList::rbegin() const {
+    Ref<LinkedListrIterator> iterator;
+    iterator.instantiate(_linked_list.rbegin());
+
+    return iterator;
+}
+
+Ref<LinkedListrIterator> LinkedList::rend() const {
+    Ref<LinkedListrIterator> iterator;
+    iterator.instantiate(_linked_list.rend());
+
+    return iterator;
+}
+
 Ref<LinkedListIterator> LinkedList::insert_value(const Variant &new_value) {
     Ref<LinkedListIterator> iterator;
     iterator.instantiate(_linked_list.insert(new_value));
@@ -67,8 +81,11 @@ void LinkedList::_bind_methods() {
     ClassDB::bind_method(D_METHOD("begin"), static_cast<Ref<LinkedListIterator> (LinkedList::*)() const>(&LinkedList::begin));
     ClassDB::bind_method(D_METHOD("end"), static_cast<Ref<LinkedListIterator> (LinkedList::*)() const>(&LinkedList::end));
 
+    ClassDB::bind_method(D_METHOD("rbegin"), static_cast<Ref<LinkedListrIterator> (LinkedList::*)() const>(&LinkedList::rbegin));
+    ClassDB::bind_method(D_METHOD("rend"), static_cast<Ref<LinkedListrIterator> (LinkedList::*)() const>(&LinkedList::rend));
+
     ClassDB::bind_method(D_METHOD("insert_value", "new_value"), static_cast<Ref<LinkedListIterator> (LinkedList::*)(const Variant&)>(&LinkedList::insert_value));
-    ClassDB::bind_method(D_METHOD("insert_in_position", "pos"), static_cast<Ref<LinkedListIterator> (LinkedList::*)(const size_t&, const Variant&)>(&LinkedList::insert_in_position));
+    ClassDB::bind_method(D_METHOD("insert_in_position", "pos", "new_value"), static_cast<Ref<LinkedListIterator> (LinkedList::*)(const size_t&, const Variant&)>(&LinkedList::insert_in_position));
 
     ClassDB::bind_method(D_METHOD("remove_value", "remove_value"), static_cast<bool (LinkedList::*)(const Variant&)>(&LinkedList::remove_value));
     ClassDB::bind_method(D_METHOD("remove_in_position", "pos"), static_cast<bool (LinkedList::*)(const size_t&)>(&LinkedList::remove_in_position));

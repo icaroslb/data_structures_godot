@@ -4,7 +4,7 @@
 		Linked List Class.
 	</brief_description>
 	<description>
-
+		A Linked List.
 	</description>
 	<tutorials>
 	</tutorials>
@@ -12,14 +12,14 @@
 		<method name="begin" qualifiers="const">
 			<return type="LinkedListIterator" />
 			<description>
-				Returns the most left value on the list.
+				Returns [LinkedListIterator] to the most left value on the list.
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
 		<method name="end" qualifiers="const">
 			<return type="LinkedListIterator" />
 			<description>
-				Returns the most right value on the list.
+				Returns [LinkedListIterator] to the most right value on the list.
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
@@ -27,7 +27,7 @@
 			<return type="LinkedListIterator" />
 			<param index="0" name="pos" type="int" />
 			<description>
-				Returns an iterator to [code]pos[/code]. If this position don't exist, returns an iterator to null.
+				Returns an [LinkedListIterator] to [param pos]. If this position don't exist, returns an [LinkedListIterator] to null.
 				[b]Complexity:[/b] [i]O(N)[/i]
 			</description>
 		</method>
@@ -41,9 +41,9 @@
 		<method name="insert_in_position">
 			<return type="LinkedListIterator" />
 			<param index="0" name="pos" type="int" />
-			<param index="1" name="_unnamed_arg1" type="Variant" />
+			<param index="1" name="new_value" type="Variant" />
 			<description>
-				Insert a new value in the [code]pos[/code]. If this position don't exist, insert on the end of the list.
+				Insert a [param new_value] in the [param pos]. If this position don't exist, insert on the end of the list. Return an [LinkedListIterator] to the [param new_value].
 				[b]Complexity:[/b] [i]O(N)[/i]
 			</description>
 		</method>
@@ -51,7 +51,7 @@
 			<return type="LinkedListIterator" />
 			<param index="0" name="new_value" type="Variant" />
 			<description>
-				Insert a new value on the end of the list.
+				Insert a [param new_value] on the end of the list. Return an [LinkedListIterator] to the [param new_value].
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
@@ -62,11 +62,18 @@
 				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
+		<method name="rbegin" qualifiers="const">
+			<return type="LinkedListrIterator" />
+			<description>
+				Returns an [LinkedListrIterator] the most right value on the list.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
 		<method name="remove_in_position">
 			<return type="bool" />
 			<param index="0" name="pos" type="int" />
 			<description>
-				Removes the value in the [code]pos[/code], and returns [code]true[/code]. If this position don't exist, returns [code]false[/code].
+				Removes the value in the [param pos], and returns [code]true[/code]. If this [param pos] don't exist, returns [code]false[/code].
 				[b]Complexity:[/b] [i]O(N)[/i]
 			</description>
 		</method>
@@ -74,15 +81,22 @@
 			<return type="bool" />
 			<param index="0" name="remove_value" type="Variant" />
 			<description>
-				Removes the first [code]remove_value[/code] ocurrence from [code]begin[/code] to [code]end[/code], and returns [code]true[/code]. If this value don't exist, returns [code]false[/code].
+				Removes the first [param remove_value] ocurrence from [code]begin[/code] to [code]end[/code], and returns [code]true[/code]. If this [param remove_value] don't exist, returns [code]false[/code].
 				[b]Complexity:[/b] [i]O(N)[/i]
+			</description>
+		</method>
+		<method name="rend" qualifiers="const">
+			<return type="LinkedListrIterator" />
+			<description>
+				Returns [LinkedListrIterator] to the most left value on the list.
+				[b]Complexity:[/b] [i]O(1)[/i]
 			</description>
 		</method>
 		<method name="search" qualifiers="const">
 			<return type="LinkedListIterator" />
 			<param index="0" name="value" type="Variant" />
 			<description>
-				Returns an iterator to the first [code]value[/code] ocurrence from [code]begin[/code] to [code]end[/code]. If this value don't exist, returns an iterator to null.
+				Returns an iterator to the first [param value] ocurrence from [code]begin[/code] to [code]end[/code]. If this [param value] don't exist, returns an iterator to null.
 				[b]Complexity:[/b] [i]O(N)[/i]
 			</description>
 		</method>

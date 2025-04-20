@@ -19,6 +19,13 @@ public:
 
     Ref<LinkedListIterator> next();
     Ref<LinkedListIterator> prev();
+
+    Ref<LinkedListIterator> operator++();
+    Ref<LinkedListIterator> operator--();
+
+    Ref<LinkedListIterator> operator++(int);
+    Ref<LinkedListIterator> operator--(int);
+
     bool is_null();
 
     Variant& operator*();

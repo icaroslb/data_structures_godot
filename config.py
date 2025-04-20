@@ -11,8 +11,8 @@ def get_doc_path():
 
 def get_doc_classes():
     return [
-        "Set", "SetIterator", "SetOpeations",
+        "Set", "SetIterator", "SetrIterator", "SetOperations",
         "Stack",
         "Queue",
-        "LinkedList", "LinkedListIterator"
+        "LinkedList", "LinkedListIterator", "LinkedListrIterator"
     ]

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<class name="SetIterator" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+<class name="SetrIterator" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
 	<brief_description>
-		Set Iterator
 	</brief_description>
 	<description>
-		Iterator for Set class
 	</description>
 	<tutorials>
 	</tutorials>
@@ -24,16 +22,16 @@
 			</description>
 		</method>
 		<method name="next">
-			<return type="SetIterator" />
+			<return type="SetrIterator" />
 			<description>
-				The iterator points to the smallest key greater than the current key, if there is no bigger key, it points to nil. Returns itself.
+				The iterator points to the biggest key smaller than the current key, if there is no smaller key, it points to nil. Returns itself.
 				[b]Complexity:[/b] [i]O(logN)[/i]
 			</description>
 		</method>
 		<method name="prev">
-			<return type="SetIterator" />
+			<return type="SetrIterator" />
 			<description>
-				The iterator points to the biggest key smaller than the current key, if there is no smaller key, it points to nil. Returns itself.
+				The iterator points to the smallest key greater than the current key, if there is no bigger key, it points to nil. Returns itself.
 				[b]Complexity:[/b] [i]O(logN)[/i]
 			</description>
 		</method>

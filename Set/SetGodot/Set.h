@@ -3,6 +3,7 @@
 
 #include <rb_tree/rb_tree.h>
 #include "SetIterator.h"
+#include "SetrIterator.h"
 
 class Set : public RefCounted {
     GDCLASS(Set, RefCounted);
@@ -24,6 +25,10 @@ public:
     Ref<SetIterator> begin();
     Ref<SetIterator> end();
     Ref<SetIterator> nil();
+
+    Ref<SetrIterator> rbegin();
+    Ref<SetrIterator> rend();
+    Ref<SetrIterator> rnil();
     size_t get_size();
     size_t get_size_2(float test);
     size_t get_size(int test);
