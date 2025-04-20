@@ -75,5 +75,5 @@ void SetIterator::_bind_methods() {
     ClassDB::bind_method(D_METHOD("is_nil"), static_cast<bool (SetIterator::*)()>(&SetIterator::is_nil));
     ClassDB::bind_method(D_METHOD("next"), static_cast<Ref<SetIterator> (SetIterator::*)()>(&SetIterator::next));
     ClassDB::bind_method(D_METHOD("prev"), static_cast<Ref<SetIterator> (SetIterator::*)()>(&SetIterator::prev));
-    ClassDB::bind_method(D_METHOD("value"), static_cast<Variant (SetIterator::*)()>(&SetIterator::get_value));
+    ClassDB::bind_method(D_METHOD("get_value"), static_cast<Variant (SetIterator::*)()>(&SetIterator::get_value));
 }

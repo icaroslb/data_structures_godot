@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Set" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Set class
+	</brief_description>
+	<description>
+		A Set class that stores unique keys, following a specific order, dictated by the less than comparison function [code](a &lt; b)[/code].
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="begin">
+			<return type="SetIterator" />
+			<description>
+                Returns an [SetIterator] to smaller key
+				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+		<method name="end">
+			<return type="SetIterator" />
+			<description>
+                Returns an [SetIterator] to [code]nil[/code]
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="get_size">
+			<return type="int" />
+			<description>
+                Returns the actual number of keys
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="init">
+			<return type="void" />
+			<param index="0" name="comparison_func" type="Callable" />
+			<description>
+                Initializes a new comparision function
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="insert">
+			<return type="bool" />
+			<param index="0" name="key" type="Variant" />
+			<description>
+				Insert a new key. If the is new, returns [code]true[/code], else, if the key is already in Set, it returns [code]false[/code]
+				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+		<method name="nil">
+			<return type="SetIterator" />
+			<description>
+				Returns an [SetIterator] to [code]nil[/code]
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="remove">
+			<return type="bool" />
+			<param index="0" name="key" type="Variant" />
+			<description>
+				Removes a key. If the kew was in Set, returns [code]true[/code], else it returns [code]false[/code]
+				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+		<method name="search">
+			<return type="SetIterator" />
+			<param index="0" name="key" type="Variant" />
+			<description>
+				Returns an [SetIterator] to the key. If the key is not int Set, it returns an [SetIterator] to [code]nil[/code]
+				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+	</methods>
+</class>

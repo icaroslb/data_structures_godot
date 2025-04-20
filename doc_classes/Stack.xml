@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Stack" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Stack class
+	</brief_description>
+	<description>
+		Stack class implements the [b]last-in, first-out (LIFO)[/b] policy.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_size" qualifiers="const">
+			<return type="int" />
+			<description>
+				Returns how much value are on the stack.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="is_empty" qualifiers="const">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if there are no values on the stack, and [code]false[/code] if there are values on the stack.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="pop">
+			<return type="void" />
+			<description>
+				Removes the value on the top of stack.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="push">
+			<return type="void" />
+			<param index="0" name="new_value" type="Variant" />
+			<description>
+				Insert a new value on the top of stack.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="top" qualifiers="const">
+			<return type="Variant" />
+			<description>
+				Returns the value on the top of stack.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+	</methods>
+</class>

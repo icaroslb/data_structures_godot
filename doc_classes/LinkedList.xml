@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="LinkedList" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Linked List Class.
+	</brief_description>
+	<description>
+
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="begin" qualifiers="const">
+			<return type="LinkedListIterator" />
+			<description>
+				Returns the most left value on the list.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="end" qualifiers="const">
+			<return type="LinkedListIterator" />
+			<description>
+				Returns the most right value on the list.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="get_pos" qualifiers="const">
+			<return type="LinkedListIterator" />
+			<param index="0" name="pos" type="int" />
+			<description>
+				Returns an iterator to [code]pos[/code]. If this position don't exist, returns an iterator to null.
+				[b]Complexity:[/b] [i]O(N)[/i]
+			</description>
+		</method>
+		<method name="get_size" qualifiers="const">
+			<return type="int" />
+			<description>
+				Returns how many values are on list.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="insert_in_position">
+			<return type="LinkedListIterator" />
+			<param index="0" name="pos" type="int" />
+			<param index="1" name="_unnamed_arg1" type="Variant" />
+			<description>
+				Insert a new value in the [code]pos[/code]. If this position don't exist, insert on the end of the list.
+				[b]Complexity:[/b] [i]O(N)[/i]
+			</description>
+		</method>
+		<method name="insert_value">
+			<return type="LinkedListIterator" />
+			<param index="0" name="new_value" type="Variant" />
+			<description>
+				Insert a new value on the end of the list.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="is_empty" qualifiers="const">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if there are no values on the list, and [code]false[/code] if there are values on the list.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="remove_in_position">
+			<return type="bool" />
+			<param index="0" name="pos" type="int" />
+			<description>
+				Removes the value in the [code]pos[/code], and returns [code]true[/code]. If this position don't exist, returns [code]false[/code].
+				[b]Complexity:[/b] [i]O(N)[/i]
+			</description>
+		</method>
+		<method name="remove_value">
+			<return type="bool" />
+			<param index="0" name="remove_value" type="Variant" />
+			<description>
+				Removes the first [code]remove_value[/code] ocurrence from [code]begin[/code] to [code]end[/code], and returns [code]true[/code]. If this value don't exist, returns [code]false[/code].
+				[b]Complexity:[/b] [i]O(N)[/i]
+			</description>
+		</method>
+		<method name="search" qualifiers="const">
+			<return type="LinkedListIterator" />
+			<param index="0" name="value" type="Variant" />
+			<description>
+				Returns an iterator to the first [code]value[/code] ocurrence from [code]begin[/code] to [code]end[/code]. If this value don't exist, returns an iterator to null.
+				[b]Complexity:[/b] [i]O(N)[/i]
+			</description>
+		</method>
+	</methods>
+</class>

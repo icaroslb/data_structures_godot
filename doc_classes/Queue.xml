@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Queue" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Queue Class.
+	</brief_description>
+	<description>
+		Stack class implements the [b]first-in, first-out (FIFO)[/b] policy.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="dequeue">
+			<return type="void" />
+			<description>
+				Removes the oldest value on queue.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="enqueue">
+			<return type="void" />
+			<param index="0" name="new_value" type="Variant" />
+			<description>
+				Insert a new value on queue.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="get_size" qualifiers="const">
+			<return type="int" />
+			<description>
+				Returns how much value are on the queue.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="head" qualifiers="const">
+			<return type="Variant" />
+			<description>
+				Returns the oldest value.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="is_empty" qualifiers="const">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if there are no values on the queue, and [code]false[/code] if there are values on the queue.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="tail" qualifiers="const">
+			<return type="Variant" />
+			<description>
+				Returns the newest value.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+	</methods>
+</class>

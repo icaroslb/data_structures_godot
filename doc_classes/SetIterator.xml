@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="SetIterator" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Set Iterator
+	</brief_description>
+	<description>
+		Iterator for Set class
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="is_nil">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if iterator points to nil, [code]false[/code] if not
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="next">
+			<return type="SetIterator" />
+			<description>
+				The iterator points to the smallest key greater than the current key, if there is no bigger key, it points to nil. Returns itself.
+				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+		<method name="prev">
+			<return type="SetIterator" />
+			<description>
+				The iterator points to the biggest key smaller than the current key, if there is no smaller key, it points to nil. Returns itself.
+				[b]Complexity:[/b] [i]O(logN)[/i]
+			</description>
+		</method>
+		<method name="get_value">
+			<return type="Variant" />
+			<description>
+				Returns the key value the iterator is pointing.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+	</methods>
+</class>

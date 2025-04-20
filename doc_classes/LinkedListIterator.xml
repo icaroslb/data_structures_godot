@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="LinkedListIterator" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Linked List Iterator Class.
+	</brief_description>
+	<description>
+		Iterator for Linked List Class.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_value">
+			<return type="Variant" />
+			<description>
+				Returns the value the iterator is pointing.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="is_null">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if iterator points to null, [code]false[/code] if not
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="next">
+			<return type="LinkedListIterator" />
+			<description>
+				The iterator points to the next value to the right, if there is no value to the right, it points to null. Returns itself.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+		<method name="prev">
+			<return type="LinkedListIterator" />
+			<description>
+				The iterator points to the previous value to the left, if there is no value to the left, it points to null. Returns itself.
+				[b]Complexity:[/b] [i]O(1)[/i]
+			</description>
+		</method>
+	</methods>
+</class>
